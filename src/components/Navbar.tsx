@@ -35,12 +35,12 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center space-x-2 text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            className="flex items-center space-x-2 text-xl font-bold text-amber-600 hover:text-amber-700 transition-colors"
           >
-            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">I</span>
+            <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-sm">P</span>
             </div>
-            <span className="hidden sm:block">Imgfly</span>
+            <span className="hidden sm:block">Pixelry</span>
           </Link>
 
           {/* Navigation Links - Desktop */}
@@ -49,8 +49,8 @@ const Navbar: React.FC = () => {
               to="/"
               className={`flex items-center space-x-1 px-3 py-2 rounded-full transition-colors ${
                 isActive('/') 
-                  ? 'bg-black text-white' 
-                  : 'text-gray-700 hover:bg-gray-100'
+                  ? 'bg-slate-700 text-white' 
+                  : 'text-slate-700 hover:bg-slate-100'
               }`}
             >
               <Home size={20} />
@@ -61,8 +61,8 @@ const Navbar: React.FC = () => {
                 to="/create"
                 className={`flex items-center space-x-1 px-3 py-2 rounded-full transition-colors ${
                   isActive('/create') 
-                    ? 'bg-black text-white' 
-                    : 'text-gray-700 hover:bg-gray-100'
+                    ? 'bg-slate-700 text-white' 
+                    : 'text-slate-700 hover:bg-slate-100'
                 }`}
               >
                 <Plus size={20} />
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                 placeholder="Search for images and ideas"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent md:hidden"
               />
             </div>
           </form>
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Link
                   to={`/user/${user.id}`}
-                  className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition-colors"
+                  className="flex items-center space-x-2 text-slate-700 hover:text-slate-900 transition-colors"
                 >
                   <img
                     src={user.avatar_url}
@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-1 text-gray-700 hover:text-red-600 transition-colors"
+                  className="flex items-center space-x-1 text-slate-700 hover:text-red-600 transition-colors"
                 >
                   <LogOut size={20} />
                 </button>
@@ -111,13 +111,13 @@ const Navbar: React.FC = () => {
               <div className="flex items-center space-x-3">
                 <Link
                   to="/login"
-                  className="text-gray-700 hover:text-gray-900 font-medium transition-colors"
+                  className="text-slate-700 hover:text-slate-900 font-medium transition-colors"
                 >
                   Log in
                 </Link>
                 <Link
                   to="/signup"
-                  className="bg-blue-600 text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors"
+                  className="bg-amber-600 text-white px-4 py-2 rounded-full font-medium hover:bg-amber-700 transition-colors"
                 >
                   Sign up
                 </Link>
@@ -128,7 +128,7 @@ const Navbar: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-700 hover:text-gray-900 transition-colors"
+            className="md:hidden p-2 text-slate-700 hover:text-slate-900 transition-colors"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
                 placeholder="Search for images and ideas"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-600 focus:border-transparent"
               />
             </div>
           </form>
@@ -160,8 +160,8 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
               className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                 isActive('/') 
-                  ? 'bg-gray-100 text-black' 
-                  : 'text-gray-700 hover:bg-gray-50'
+                  ? 'bg-slate-700 text-white' 
+                  : 'text-slate-700 hover:bg-slate-100'
               }`}
             >
               <Home size={20} />
@@ -174,8 +174,8 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-colors ${
                     isActive('/create') 
-                      ? 'bg-gray-100 text-black' 
-                      : 'text-gray-700 hover:bg-gray-50'
+                      ? 'bg-slate-700 text-white' 
+                      : 'text-slate-700 hover:bg-slate-100'
                   }`}
                 >
                   <Plus size={20} />
@@ -184,7 +184,7 @@ const Navbar: React.FC = () => {
                 <Link
                   to={`/user/${user.id}`}
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
                 >
                   <img
                     src={user.avatar_url}
@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors w-full text-left"
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors w-full text-left"
                 >
                   <LogOut size={20} />
                   <span>Log out</span>
@@ -206,7 +206,7 @@ const Navbar: React.FC = () => {
                 <Link
                   to="/login"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
                 >
                   <User size={20} />
                   <span>Log in</span>
@@ -214,7 +214,7 @@ const Navbar: React.FC = () => {
                 <Link
                   to="/signup"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition-colors"
                 >
                   <span>Sign up</span>
                 </Link>

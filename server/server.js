@@ -23,7 +23,7 @@ app.use('/api/users', userRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ message: 'Imgfly API is running!' });
+  res.json({ message: 'Pixelry API is running!' });
 });
 
 // Error handling middleware

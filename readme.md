@@ -1,4 +1,4 @@
-# Imgfly
+# Pixelry
 
 A Pinterest-inspired web application for discovering, sharing, and saving beautiful images and ideas.
 

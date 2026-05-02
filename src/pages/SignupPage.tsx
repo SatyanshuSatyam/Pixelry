@@ -48,16 +48,16 @@ const SignupPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-sky-50 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-stone-100 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
       <div className="max-w-md w-full">
-        <div className="bg-gray-50 rounded-2xl shadow-xl p-8">
+        <div className="bg-slate-50 rounded-2xl shadow-xl p-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-white font-bold text-2xl">I</span>
+            <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-white font-bold text-2xl">P</span>
             </div>
-            <h2 className="text-3xl font-bold text-gray-900">Join Imgfly</h2>
-            <p className="text-gray-600 mt-2">Find new ideas to try</p>
+            <h2 className="text-3xl font-bold text-slate-900">Join Pixelry</h2>
+            <p className="text-slate-600 mt-2">Find new ideas to try</p>
           </div>
 
           {/* Form */}
@@ -96,7 +96,7 @@ const SignupPage: React.FC = () => {
             </div>
 
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="username" className="block text-sm font-medium text-slate-700 mb-1">
                 Username
               </label>
               <input
@@ -106,13 +106,13 @@ const SignupPage: React.FC = () => {
                 required
                 value={formData.username}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-sm"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors text-sm"
                 placeholder="Choose a username"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
                 Email address
               </label>
               <input
@@ -122,13 +122,13 @@ const SignupPage: React.FC = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-sm"
+                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors text-sm"
                 placeholder="Enter your email"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-slate-700 mb-1">
                 Password
               </label>
               <div className="relative">
@@ -139,7 +139,7 @@ const SignupPage: React.FC = () => {
                   required
                   value={formData.password}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent transition-colors text-sm pr-10"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-colors text-sm pr-10"
                   placeholder="Create a password"
                 />
                 <button
@@ -150,13 +150,13 @@ const SignupPage: React.FC = () => {
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
-              <p className="text-xs text-gray-500 mt-1">Must be at least 6 characters</p>
+              <p className="text-xs text-slate-500 mt-1">Must be at least 6 characters</p>
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-6"
+              className="w-full bg-amber-600 text-white py-3 px-4 rounded-lg font-medium hover:bg-amber-700 focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mt-6"
             >
               {loading ? (
                 <div className="flex items-center justify-center">
@@ -171,9 +171,9 @@ const SignupPage: React.FC = () => {
 
           {/* Footer */}
           <div className="mt-6 text-center">
-            <p className="text-gray-600 text-sm">
+            <p className="text-slate-600 text-sm">
               Already have an account?{' '}
-              <Link to="/login" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
+              <Link to="/login" className="text-amber-600 hover:text-amber-700 font-medium transition-colors">
                 Sign in
               </Link>
             </p>

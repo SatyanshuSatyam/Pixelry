@@ -107,12 +107,12 @@ const CreatePinPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-slate-50 py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           {/* Header */}
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h1 className="text-2xl font-bold text-gray-900">Create Image</h1>
+          <div className="px-6 py-4 border-b border-slate-200">
+            <h1 className="text-2xl font-bold text-slate-900">Create Image</h1>
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -120,12 +120,12 @@ const CreatePinPage: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Image Upload Section */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-3">
+                  <label className="block text-sm font-medium text-slate-700 mb-3">
                     Upload Image *
                   </label>
                   
                   {!previewUrl ? (
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-gray-400 transition-colors">
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-slate-400 transition-colors">
                       <input
                         type="file"
                         accept="image/*"
@@ -140,13 +140,13 @@ const CreatePinPage: React.FC = () => {
                         <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                           <Upload className="w-6 h-6 text-gray-400" />
                         </div>
-                        <p className="text-lg font-medium text-gray-900 mb-2">
+                        <p className="text-lg font-medium text-slate-900 mb-2">
                           Choose a file or drag and drop
                         </p>
-                        <p className="text-sm text-gray-500 mb-4">
+                        <p className="text-sm text-slate-500 mb-4">
                           We recommend using high-quality JPG, PNG, or GIF less than 5MB
                         </p>
-                        <div className="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                        <div className="bg-amber-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-amber-700 transition-colors">
                           Select Image
                         </div>
                       </label>
@@ -161,7 +161,7 @@ const CreatePinPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={handleRemoveFile}
-                        className="absolute top-2 right-2 p-1 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-opacity"
+                        className="absolute top-2 right-2 p-1 bg-slate-700 bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-opacity"
                       >
                         <X size={16} />
                       </button>
@@ -172,7 +172,7 @@ const CreatePinPage: React.FC = () => {
                 {/* Form Fields */}
                 <div className="space-y-6">
                   <div>
-                    <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="title" className="block text-sm font-medium text-slate-700 mb-2">
                       Title *
                     </label>
                     <input
@@ -182,17 +182,17 @@ const CreatePinPage: React.FC = () => {
                       required
                       value={formData.title}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                       placeholder="Add your title"
                       maxLength={100}
                     />
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-slate-500 mt-1">
                       {formData.title.length}/100 characters
                     </p>
                   </div>
 
                   <div>
-                    <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="description" className="block text-sm font-medium text-slate-700 mb-2">
                       Description
                     </label>
                     <textarea
@@ -201,17 +201,17 @@ const CreatePinPage: React.FC = () => {
                       rows={4}
                       value={formData.description}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent resize-none"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent resize-none"
                       placeholder="Tell everyone what your image is about"
                       maxLength={500}
                     />
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-slate-500 mt-1">
                       {formData.description.length}/500 characters
                     </p>
                   </div>
 
                   <div>
-                    <label htmlFor="link" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="link" className="block text-sm font-medium text-slate-700 mb-2">
                       <LinkIcon size={16} className="inline mr-1" />
                       Link
                     </label>
@@ -221,13 +221,13 @@ const CreatePinPage: React.FC = () => {
                       name="link"
                       value={formData.link}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                       placeholder="Add a destination link"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label htmlFor="category" className="block text-sm font-medium text-slate-700 mb-2">
                       Category
                     </label>
                     <select
@@ -235,7 +235,7 @@ const CreatePinPage: React.FC = () => {
                       name="category"
                       value={formData.category}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-600 focus:border-transparent"
                     >
                       {categories.map((category) => (
                         <option key={category} value={category}>
@@ -249,18 +249,18 @@ const CreatePinPage: React.FC = () => {
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex justify-end space-x-3">
+            <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end space-x-3">
               <button
                 type="button"
                 onClick={() => navigate(-1)}
-                className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-4 py-2 text-slate-700 bg-white border border-gray-300 rounded-lg hover:bg-slate-100 transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="submit"
                 disabled={loading || !selectedFile || !formData.title.trim()}
-                className="px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-6 py-2 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 focus:ring-2 focus:ring-amber-600 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <div className="flex items-center">

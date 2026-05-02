@@ -1,10 +1,11 @@
 {
-  "name": "imgfly-server",
+  "name": "pixelry-server",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.38.4",
