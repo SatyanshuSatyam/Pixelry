@@ -1,0 +1,26 @@
+name: Imgfly Backend Keep-Alive
+
+on:
+  schedule:
+    # This runs every 3 days at midnight UTC
+    - cron: '0 0 */3 * *' 
+  workflow_dispatch: # This allows you to click a button to run it manually
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Keep-Alive Ping
+        run: |
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/images?select=*&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          
+          echo "Supabase responded with status: $STATUS"
+          
+          if [ "$STATUS" -eq 200 ]; then
+            echo "✅ Backend is awake!"
+          else
+            echo "❌ Ping failed or table not found."
+            exit 1
+          fi
