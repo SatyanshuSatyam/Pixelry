@@ -2,9 +2,8 @@ name: Imgfly Backend Keep-Alive
 
 on:
   schedule:
-    # This runs every 3 days at midnight UTC
     - cron: '0 0 */3 * *' 
-  workflow_dispatch: # This allows you to click a button to run it manually
+  workflow_dispatch: 
 
 jobs:
   ping-supabase:
@@ -12,15 +11,19 @@ jobs:
     steps:
       - name: Send Keep-Alive Ping
         run: |
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/images?select=*&limit=1" \
-          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
-          -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}")
+          # We use the URL exactly as it is in your Jenkins environment
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" \
+            --max-time 30 \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            "${{ secrets.SUPABASE_URL }}")
           
           echo "Supabase responded with status: $STATUS"
           
+          # If status is 200, the job succeeds. Anything else (like 404 or 401) fails.
           if [ "$STATUS" -eq 200 ]; then
-            echo "✅ Backend is awake!"
+            echo "✅ Success: Supabase is alive!"
           else
-            echo "❌ Ping failed or table not found."
+            echo "❌ Error: Received status $STATUS. Check your URL or API Key."
             exit 1
           fi
